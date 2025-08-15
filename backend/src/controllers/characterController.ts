@@ -7,6 +7,18 @@ export async function getCharacters(req: Request,res: Response) {
     res.json(characters);
 }
 
+export async function getCharacterById(req: Request, res: Response) {
+    const { id } = req.params;
+    const characters = await readCharacters();
+    const character = characters.find((c: { id: number; }) => c.id === parseInt(id));
+
+    if (!character) {
+        return res.status(404).json({ message: "Character not found." });
+    }
+
+    res.json(character);
+}
+
 export async function addCharacter(req: Request, res: Response) {
     const characters = await readCharacters();
     const newId = characters.length > 0
