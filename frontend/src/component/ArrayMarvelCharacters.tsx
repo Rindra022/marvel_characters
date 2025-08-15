@@ -20,7 +20,7 @@ function ArrayMarvelCharacters() {
 
                     {characters.map((char : any)=>
                         <div key={char.id} className="grid grid-cols-6 text-gray-700 text-sm">
-                            <div className="border-b-2  px-3 py-4 flex items-center font-bold"><span>{char.id}</span></div>
+                            <div className="border-b-2 pl-5 py-4 flex items-center font-bold"><span>{char.id}</span></div>
                             <div className="border-b-2 px-3 py-4 flex items-center font-bold">{char.name}</div>
                             <div className="border-b-2 px-3 py-4 flex items-center">{char.realName}</div>
                             <div className="border-b-2 px-3 py-4 flex items-center">{char.universe}</div>
