@@ -14,9 +14,8 @@ function ArrayMarvelCharacters() {
     }, []);
     return (
         <>
-            <div className="">
-                <div className="w-4xl">
-                    <h1 className="mb-8 text-center font-bold text-3xl text-red-400">Marvel Characters</h1>
+            <div className="w-4xl">
+                    <h1 className="mb-8 text-center font-bold text-3xl text-red-500">Marvel Characters</h1>
 
                     {characters.map((char : any)=>
                         <div key={char.id} className="grid grid-cols-6 text-gray-700 text-sm">
@@ -29,7 +28,6 @@ function ArrayMarvelCharacters() {
                         </div>
                     )}
                 </div>
-            </div>
         </>
     )
 }
