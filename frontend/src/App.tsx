@@ -4,7 +4,9 @@ import ArrayMarvelCharacters from "./component/ArrayMarvelCharacters"
 function App() {
   return (
     <>
-        <ArrayMarvelCharacters/>
+        <main className="h-screen flex justify-center flex-column items-center">
+            <ArrayMarvelCharacters/>
+        </main>
     </>
   )
 }
