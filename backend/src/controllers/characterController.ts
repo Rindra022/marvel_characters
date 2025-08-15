@@ -9,7 +9,9 @@ export async function getCharacters(req: Request,res: Response) {
 
 export async function addCharacter(req: Request, res: Response) {
     const characters = await readCharacters();
-    const newId = characters.length ? characters[characters.length - 1].id + 1 : 1;
+    const newId = characters.length > 0
+        ? Math.max(...characters.map((c: { id: number; }) => c.id)) + 1
+        : 1;
     const newCharacter = { id: newId, ...req.body };
     characters.push(newCharacter);
     await writeCharacters(characters)
