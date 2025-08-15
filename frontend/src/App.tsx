@@ -46,7 +46,11 @@ function App() {
             const res = await fetch(`/characters`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    name: form.name,
+                    realName: form.realName,
+                    universe: form.universe
+                }),
             });
             const newChar = await res.json();
             setCharacters((prev) => [...prev, newChar]);
