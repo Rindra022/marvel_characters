@@ -28,3 +28,11 @@ export async function updateCharacter(req: Request, res: Response) {
     await writeCharacters(characters);
     res.json(characters[index])
 }
+
+export async function deleteCharacter(req: Request, res: Response) {
+    const { id } = req.params;
+    let characters = await readCharacters();
+    characters = characters.filter((c: { id: number; }) => c.id !== parseInt(id));
+    await writeCharacters(characters);
+    res.json({ message: "Deleted" });
+}
